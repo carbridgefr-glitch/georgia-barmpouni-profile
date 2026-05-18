@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Φτιάξε τη δική σου ψηφιακή κάρτα</title>
+  <title>Φτιάξε τη δική σου ψηφιακή NFC κάρτα</title>
 
   <style>
     * {
@@ -37,9 +37,10 @@
     .hero {
       padding: 34px 22px 28px;
       background:
-        linear-gradient(rgba(5, 17, 40, 0.78), rgba(5, 17, 40, 0.84)),
-        radial-gradient(circle at top right, rgba(199,154,50,0.35), transparent 32%),
-        linear-gradient(135deg, #07172d, #123764);
+        linear-gradient(rgba(5, 17, 40, 0.78), rgba(5, 17, 40, 0.82)),
+        url("premium.png");
+      background-size: cover;
+      background-position: center;
       color: #ffffff;
       text-align: center;
     }
@@ -107,6 +108,37 @@
       max-width: 420px;
     }
 
+    .video-section {
+      padding: 26px 18px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .video-box {
+      width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.18);
+      background: #000000;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .video-box video {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      background: #000000;
+    }
+
+    .video-note {
+      margin: 12px auto 0;
+      text-align: center;
+      color: #667085;
+      font-size: 12.5px;
+      line-height: 1.45;
+      max-width: 400px;
+    }
+
     .steps {
       display: grid;
       gap: 12px;
@@ -159,12 +191,20 @@
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 22px;
-      padding: 16px;
+      padding: 14px;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
     }
 
+    .package-card img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      background: #f1f5f9;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.10);
+    }
+
     .package-card h3 {
-      margin: 0 0 6px;
+      margin: 15px 0 6px;
       font-size: 23px;
       color: #0b1f3a;
       font-weight: 900;
@@ -220,12 +260,12 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    .package-btn.gold {
-      background: #b8891d;
-    }
-
     .package-btn.green {
       background: #22a63a;
+    }
+
+    .package-btn.gold {
+      background: #b8891d;
     }
 
     .products {
@@ -423,6 +463,24 @@
       <a class="hero-btn" href="#contact">Θέλω να με καλέσετε</a>
     </header>
 
+    <section class="video-section">
+      <h2 class="section-title">Δες πώς λειτουργεί</h2>
+      <p class="section-subtitle">
+        Με ένα απλό άγγιγμα NFC, το βραχιόλι ή το μπρελόκ ανοίγει την ψηφιακή κάρτα στο κινητό του πελάτη.
+      </p>
+
+      <div class="video-box">
+        <video autoplay muted loop playsinline controls>
+          <source src="nfc-demo.mp4.mp4" type="video/mp4">
+          Το πρόγραμμα περιήγησής σας δεν υποστηρίζει βίντεο.
+        </video>
+      </div>
+
+      <p class="video-note">
+        Δεν χρειάζεται εφαρμογή. Το προφίλ ανοίγει απευθείας από NFC ή QR και μπορεί να αποθηκευτεί στο κινητό.
+      </p>
+    </section>
+
     <section>
       <h2 class="section-title">Πώς λειτουργεί</h2>
       <p class="section-subtitle">
@@ -465,13 +523,14 @@
       <div class="package-grid">
 
         <article class="package-card">
+          <img src="basic.png" alt="Basic NFC Digital Card Package">
           <h3>Basic</h3>
-          <p>Ιδανικό για γρήγορη και καθαρή προβολή με τα βασικά κουμπιά.</p>
+          <p>Ιδανικό για απλή και άμεση επαγγελματική προβολή.</p>
 
           <div class="features">
             <div class="feature"><span class="check">✓</span> Ξεκάθαρη δομή</div>
-            <div class="feature"><span class="check">✓</span> Site ή βασικό link</div>
-            <div class="feature"><span class="check">✓</span> Google Review και Google Map</div>
+            <div class="feature"><span class="check">✓</span> 3 βασικά κουμπιά</div>
+            <div class="feature"><span class="check">✓</span> Ιδανικό για γρήγορη προβολή</div>
           </div>
 
           <button class="package-btn" onclick="selectPackage('Basic')">
@@ -480,13 +539,15 @@
         </article>
 
         <article class="package-card">
+          <img src="professional.png" alt="Professional NFC Digital Card Package">
           <h3>Professional</h3>
-          <p>Για πιο ολοκληρωμένη επαγγελματική εικόνα με social και επικοινωνία.</p>
+          <p>Ολοκληρωμένη επαγγελματική προβολή με social media, επικοινωνία και NFC βραχιόλι.</p>
 
           <div class="features">
-            <div class="feature"><span class="check">✓</span> Logo ή φωτογραφία προφίλ</div>
-            <div class="feature"><span class="check">✓</span> Social media και επικοινωνία</div>
-            <div class="feature"><span class="check">✓</span> Δώρο NFC βραχιόλι</div>
+            <div class="feature"><span class="check">✓</span> Φωτογραφία προφίλ + logo</div>
+            <div class="feature"><span class="check">✓</span> Site, Google Review, Google Map</div>
+            <div class="feature"><span class="check">✓</span> Social media & επικοινωνία</div>
+            <div class="feature"><span class="check">✓</span> Δώρο 1 NFC βραχιόλι</div>
           </div>
 
           <button class="package-btn gold" onclick="selectPackage('Professional')">
@@ -495,12 +556,15 @@
         </article>
 
         <article class="package-card">
+          <img src="premium.png" alt="Premium NFC Digital Card Package">
           <h3>Premium</h3>
-          <p>Πλήρης παρουσίαση με cover, social, προσφορές, βίντεο, προϊόντα και extra NFC υλικό.</p>
+          <p>Πλήρης premium παρουσίαση με cover, social, βίντεο, προσφορές, προϊόντα και NFC υλικό.</p>
 
           <div class="features">
-            <div class="feature"><span class="check">✓</span> Cover + προφίλ + logo</div>
-            <div class="feature"><span class="check">✓</span> Προσφορές, βίντεο, βιογραφία, gallery</div>
+            <div class="feature"><span class="check">✓</span> Cover + φωτογραφία προφίλ + logo</div>
+            <div class="feature"><span class="check">✓</span> Όλα τα social & στοιχεία επικοινωνίας</div>
+            <div class="feature"><span class="check">✓</span> Google Review + Google Map</div>
+            <div class="feature"><span class="check">✓</span> Προσφορές, βίντεο, βιογραφία & premium παρουσίαση</div>
             <div class="feature"><span class="check">✓</span> 1 NFC βραχιόλι + 10 προσωποποιημένα μπρελόκ</div>
           </div>
 
